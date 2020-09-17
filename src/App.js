@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import {getPlantsDistribution} from './lib/api'
+import { getPlantsDistribution } from './lib/api'
 
 import DropDownFilter from './components/DropDownFilter'
 
