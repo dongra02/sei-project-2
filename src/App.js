@@ -5,10 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { getPlantsDistribution } from './lib/api'
 
 import DropDownFilter from './components/DropDownFilter'
-
-
-
-
+import PlantCard from './components/PlantCard'
 
 class App extends React.Component {
   state = {
@@ -39,7 +36,8 @@ class App extends React.Component {
           <DropDownFilter handleSelectRegion={this.handleSelectRegion} />
         </div>
         <div>
-          {this.state.plants.map(plant => <div key={plant.id}>{plant.common_name} {plant.tdwg_code} {plant.tdwg_level}</div>)}
+          {/* {this.state.plants.map((plant, i) => <div key={i}>{plant.common_name}</div>)} */}
+          {this.state.plants.map((plant, i) => <PlantCard key={i} {...plant}/>)} 
         </div>
       </div>
     )
