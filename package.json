@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "bulma": "^0.9.0",
+    "concurrently": "^5.3.0",
+    "cors-anywhere": "^0.4.3",
     "eslint-plugin-react": "^7.18.3",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
@@ -13,7 +15,7 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": “concurrently \”react-scripts start\” \”cd node_modules/cors-anywhere/lib/ && npm run start\””
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
