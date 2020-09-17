@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getSinglePlant } from '../lib/api'
+import PlantCarousel from './PlantCarousel'
 
 class PlantDetail extends React.Component{
 
@@ -49,7 +50,6 @@ class PlantDetail extends React.Component{
               </figure>
               {/* <div>{this.state.plant.main_species.images.flower[0].image_url}</div> */}
             </div>
-            
           </div>
           <PlantCarousel flowerArray={this.state.flowerArray}/>
         </div>
