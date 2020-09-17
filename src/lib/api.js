@@ -1,14 +1,22 @@
 import axios from 'axios'
 
-// const corsFix = 'https://cors-anywhere.herokuapp.com'
-const corsFix = 'http://localhost:8080'
-const token = 'token=jvzv7evQ2knnSuZVSQxVv-kWuxdUbQgXKw-8hcMAJcY'
-const baseUrl = 'https://trefle.io/api/v1'
 
-
-
-export const getPlantsDistribution = (region) => {
-  console.log(`${corsFix}/${baseUrl}/distributions/${region}/plants?${token}`)
-  return axios.get(`${corsFix}/${baseUrl}/distributions/${region}/plants?${token}`)
+const token = 'jvzv7evQ2knnSuZVSQxVv-kWuxdUbQgXKw-8hcMAJcY'
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+const baseUrl = proxyUrl + 'https://trefle.io/api/v1/'
+const config = {
+  headers: {
+    Authorization: 'Bearer ' + token
+  }
 }
 
+const query =  {
+  "filter_not": {
+    "edible_part": "null"
+  }
+}
+
+export const getPlantsDistribution = (region) => {
+  // return axios.get(`${baseUrl}/distributions/${region}/plants?filter[edible]=true`, config)
+  return axios.get(`${baseUrl}/plants?${query}`, config)
+}
