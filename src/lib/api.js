@@ -16,14 +16,12 @@ const query =  {
   }
 }
 
-const pageNum = 1
-
 export const getPlantsDistribution = (region) => {
   // return axios.get(`${baseUrl}/distributions/${region}/plants?filter[edible]=true`, config)
   return axios.get(`${baseUrl}/plants?${query}&page=5`, config)
   // return axios.get(`${baseUrl}/distributions/9/plants?${query}`, config)
 }
 
-export const getPlantsEdible = () => {
+export const getPlantsEdible = (pageNum) => {
   return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
 }
