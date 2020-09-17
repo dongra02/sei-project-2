@@ -16,8 +16,7 @@ const PlantCard = (props) => {
             </figure>
           </div>
           <div className="card-content">
-            <div>name: {common_name}</div>
-            <div>self-link to wrap in Link component: {self}</div>
+            <div className="is-capitalized">{common_name}</div>
           </div>
         </div>
       </Link>

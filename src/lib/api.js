@@ -23,7 +23,9 @@ export const getPlantsDistribution = (region) => {
 }
 
 export const getPlantsEdible = (pageNum) => {
-  return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
+  // return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
+  return axios.get(`${baseUrl}/plants?${query}`, config)
+
 }
 
 export const getSinglePlant = slug => axios.get(`${baseUrl}/plants/${slug}`, config)
