@@ -48,7 +48,6 @@ class Home extends React.Component {
 
   ButtonOnClick = (event) => {
     console.log(event.target.value)
-    // /api/v1/plants?page=20270
     let pageNum = event.target.value.split('page=')
     pageNum = pageNum[1]
     if (event.target.value === this.state.links.self) {
@@ -60,9 +59,6 @@ class Home extends React.Component {
     console.log(pageNum)
     this.CallEdiblePlant(pageNum)
   }
-
-  
-
 
   render () {
     if (!this.state.plants || !this.state.links  ) return null
@@ -78,7 +74,6 @@ class Home extends React.Component {
         <div className="field is-horizontal">
           <div className="container">
             <div className="columns is-multiline">
-              {/* {this.state.plants.map((plant, i) => <div key={i}>{plant.common_name}</div>)} */}
               {this.state.plants.map((plant, i) => <PlantCard key={i} {...plant}/>)} 
             </div>
           </div>

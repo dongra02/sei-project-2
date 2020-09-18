@@ -14,19 +14,15 @@ class PlantDetail extends React.Component{
     const slug = this.props.match.params.slug
     const plant = await getSinglePlant(slug)
     console.log(plant.data.data)
-    // console.log(plant.data.data.main_species.images[0])
-    console.log(plant.data.data.main_species.images.flower.length )
     const flowerArray = []
     for (let index = 0 ; index < plant.data.data.main_species.images.flower.length; index++) {
       flowerArray.push(plant.data.data.main_species.images.flower[index].image_url)
     }
-    console.log(flowerArray)
     this.setState({ plant: plant.data.data, flowerArray })
     
   }
 
   
-
   render() {
     if (!this.state.plant) return null
 
@@ -53,7 +49,6 @@ class PlantDetail extends React.Component{
               <figure className="image is-fullwidth">
                 <img className="is-rounded" src={image_url} alt="plant image" />
               </figure>
-              {/* <div>{this.state.plant.main_species.images.flower[0].image_url}</div> */}
             </div>
           </div>
         </div>

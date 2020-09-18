@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 
 const PlantCard = (props) => {
   const { common_name, image_url, slug } = props
-  const { self } = props.links
-
 
   return (
     <div className="column is-one-quarter">

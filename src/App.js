@@ -1,8 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import { getPlantsDistribution, getPlantsEdibleQueryTwo } from './lib/api'
-
 import Home from './components/Home'
 import PlantDetail from './components/PlantDetail'
 import Navbar from './components/Navbar'

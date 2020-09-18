@@ -9,14 +9,12 @@ const config = {
     Authorization: 'Bearer ' + token
   }
 }
-// curl 'https://trefle.io/api/v1/plants?token=YOUR_TREFLE_TOKEN&filter[common_name]=beach%20strawberry'
+
 const query =  {
   'filter_not': {
     'edible_part': 'null'
   }
 }
-
-const queryTwo = 'filter[common_name]='
 
 export const getPlantsDistribution = (region) => {
   // return axios.get(`${baseUrl}/distributions/${region}/plants?filter[edible]=true`, config)
@@ -28,21 +26,12 @@ export const getPlantsEdible = (pageNum) => {
   console.log(`${baseUrl}/plants?${query}&page=${pageNum}`)
   return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
   // return axios.get(`${baseUrl}/plants?${query}`, config)
-
 }
-
-// https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1//plants?[object
 
 export const getPlantsEdibleQueryTwo = (queryText) => {
   console.log(queryText)
   console.log(`${baseUrl}/plants/?&filter[common_name]=${queryText}`)
   return axios.get(`${baseUrl}/plants/search?q=${queryText}`, config)
-  // return axios.get(`${baseUrl}/plants/?&filter[common_name]=${queryText}`, config)
-  // return axios.get(`${baseUrl}/plants?${query}`, config)
-
 }
 
 export const getSinglePlant = slug => axios.get(`${baseUrl}/plants/${slug}`, config)
-
-
-// export const getPlantsEdiblePage 
