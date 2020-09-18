@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 const Header = () => {
   return (
-    <section className="hero is-primary is-medium with-navbar">
+    <section className="hero is-primary with-navbar">
       <div className="hero-body">
         <div className="container has-text-centered">
           <h1 className="title is-1">

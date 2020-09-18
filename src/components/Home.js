@@ -79,10 +79,10 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="buttons is-success is-centered">
-          <button className="button" value={this.state.links.first} onClick={this.ButtonOnClick}>First</button>
-          <button className="button" value={this.state.links.next} onClick={this.ButtonOnClick}>Next</button>
-          <button className="button" value={this.state.links.self} onClick={this.ButtonOnClick}>Previous</button>
-          <button className="button" value={this.state.links.last} onClick={this.ButtonOnClick}>Last</button>
+          <button className="button is-primary" value={this.state.links.first} onClick={this.ButtonOnClick}>◀◀◀ First</button>
+          <button className="button is-primary" value={this.state.links.self} onClick={this.ButtonOnClick}>◀ Previous</button>
+          <button className="button is-primary" value={this.state.links.next} onClick={this.ButtonOnClick}>Next ▶</button>
+          <button className="button is-primary" value={this.state.links.last} onClick={this.ButtonOnClick}>Last ▶▶▶</button>
         </div>
       </div>
     )
