@@ -3,11 +3,14 @@ import React from 'react'
 import { getPlantsEdible, getPlantsEdibleQueryTwo } from '../lib/api'
 import PlantCard from './PlantCard'
 import DropDownFilter from './DropDownFilter'
+import SearchPlant from './SearchPlant'
 
 class Home extends React.Component {
 
   state  = {
     plants: [],
+    search: [],
+    searchQuery: '',
     links: null
   }
 
@@ -17,8 +20,16 @@ class Home extends React.Component {
     const response = await getPlantsEdibleQueryTwo()
     const plants = response.data.data
     console.log(response.data.data)
-    this.setState({ plants })
-    this.props.history.push(`/search/`)
+    this.setState({ search: plants })
+  }
+
+  filterPlants = async(event) => {
+    // console.log(event.target.value)
+    const searchQuery = event.target.value
+    const response = await getPlantsEdibleQueryTwo(searchQuery)
+    const plants = response.data.data
+    console.log(response.data.data)
+    this.setState({ plants, searchQuery })
   }
 
   
@@ -50,15 +61,21 @@ class Home extends React.Component {
     this.CallEdiblePlant(pageNum)
   }
 
+  
+
+
   render () {
     if (!this.state.plants || !this.state.links  ) return null
 
     return (
       <div className="App">
-        <div className="field is-horizontal">
-          <DropDownFilter handleSelectRegion={this.handleSelectRegion} />
+        <div>
+          <form>
+            {/* <DropDownFilter handleSelectRegion={this.handleSelectRegion} /> */}
+            <SearchPlant filterPlants={this.filterPlants} searchQuery={this.searchQuery}/>
+          </form>
         </div>
-        <div className="section">
+        <div className="field is-horizontal">
           <div className="container">
             <div className="columns is-multiline">
               {/* {this.state.plants.map((plant, i) => <div key={i}>{plant.common_name}</div>)} */}

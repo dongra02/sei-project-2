@@ -7,7 +7,6 @@ import Home from './components/Home'
 import PlantDetail from './components/PlantDetail'
 import Navbar from './components/Navbar'
 
-
 class App extends React.Component {
   state = {
     plants: []
@@ -23,7 +22,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:slug" component={PlantDetail} />
-          <Route exact path="/search" component={Home} />
         </Switch>
       </BrowserRouter>
     )

@@ -16,7 +16,7 @@ const query =  {
   }
 }
 
-const queryTwo = 'filter[common_name]=beach%20strawberry'
+const queryTwo = 'filter[common_name]='
 
 export const getPlantsDistribution = (region) => {
   // return axios.get(`${baseUrl}/distributions/${region}/plants?filter[edible]=true`, config)
@@ -33,9 +33,11 @@ export const getPlantsEdible = (pageNum) => {
 
 // https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1//plants?[object
 
-export const getPlantsEdibleQueryTwo = () => {
-  console.log(`${baseUrl}/plants?${queryTwo}`)
-  return axios.get(`${baseUrl}/plants?${queryTwo}`, config)
+export const getPlantsEdibleQueryTwo = (queryText) => {
+  console.log(queryText)
+  console.log(`${baseUrl}/plants/?&filter[common_name]=${queryText}`)
+  return axios.get(`${baseUrl}/plants/search?q=${queryText}`, config)
+  // return axios.get(`${baseUrl}/plants/?&filter[common_name]=${queryText}`, config)
   // return axios.get(`${baseUrl}/plants?${query}`, config)
 
 }
