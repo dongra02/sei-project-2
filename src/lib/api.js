@@ -26,7 +26,8 @@ export const getPlantsDistribution = (region) => {
 
 export const getPlantsEdible = (pageNum) => {
   console.log(`${baseUrl}/plants?${query}&page=${pageNum}`)
-  return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
+  // return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
+  return axios.get(`${baseUrl}/species?filter[edible]=true&page=${pageNum}`, config)
   // return axios.get(`${baseUrl}/plants?${query}`, config)
 }
 
