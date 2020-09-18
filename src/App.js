@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import PlantDetail from './components/PlantDetail'
-import Navbar from './components/Navbar'
+import Header from './components/Header'
 
 class App extends React.Component {
   state = {
@@ -16,7 +16,8 @@ class App extends React.Component {
     
     return (
       <BrowserRouter>
-        <Navbar/>
+        <Header />
+        {/* <Navbar/> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:slug" component={PlantDetail} />
