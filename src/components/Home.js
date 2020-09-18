@@ -30,7 +30,7 @@ class Home extends React.Component {
     const plants = response.data.data
     console.log(plants)
     let links
-    if ( response.data.data.length > 20){
+    if ( response.data.data.length === 20){
       links = response.data.links
     } else {
       links = {
