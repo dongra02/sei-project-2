@@ -3,6 +3,8 @@ import axios from 'axios'
 
 const token = 'jvzv7evQ2knnSuZVSQxVv-kWuxdUbQgXKw-8hcMAJcY'
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+// const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=<'
+
 const baseUrl = proxyUrl + 'https://trefle.io/api/v1/'
 const config = {
   headers: {

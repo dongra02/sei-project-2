@@ -39,17 +39,18 @@ class PlantDetail extends React.Component{
                 {main_species.edible_part && <p>Edible Part: {main_species.edible_part}</p>}
                 <p>Genus Name: {genus.name}</p>
                 <p>Family Name: {family.name}</p>
-                <p>Family Common Name: {family_common_name}</p>
+                {family_common_name && <p>Family Common Name: {family_common_name}</p>}
                 <div className="containter flower-array">
                   <PlantCarousel flowerArray={this.state.flowerArray}/>
                 </div>
               </div>
             </div>
-            <div className="column is-half">
-              <figure className="image is-fullwidth">
-                <img className="is-rounded" src={image_url} alt="plant image" />
-              </figure>
-            </div>
+            { image_url ? 
+              <div className="column is-half">
+                <figure className="image is-fullwidth">
+                  <img className="is-rounded" src={image_url} alt="plant image" />
+                </figure>
+              </div> : <div>Sorry, no image available</div> }
           </div>
         </div>
       </div>
