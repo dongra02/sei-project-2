@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { getPlantsEdible } from '../lib/api'
+import { getPlantsEdible, getPlantsEdibleQueryTwo } from '../lib/api'
 import PlantCard from './PlantCard'
+import DropDownFilter from './DropDownFilter'
 
 class Home extends React.Component {
 
@@ -10,13 +11,20 @@ class Home extends React.Component {
     links: null
   }
 
+  handleSelectRegion = async(e) => {
+    const region =  e.target.value
+    console.log(region)
+    const response = await getPlantsEdibleQueryTwo()
+    const plants = response.data.data
+    console.log(response.data.data)
+    this.setState({ plants })
+    this.props.history.push(`/search/`)
+  }
+
   
   CallEdiblePlant = async (pageNum) => {
     const response = await getPlantsEdible(pageNum)
     const plants = response.data.data
-    plants.sort(function(a,b){
-      return a.common_name.localeCompare(b.common_name)
-    })
     console.log(plants)
     const links = response.data.links
     console.log(response.data.links)
@@ -47,6 +55,9 @@ class Home extends React.Component {
 
     return (
       <div className="App">
+        <div className="field is-horizontal">
+          <DropDownFilter handleSelectRegion={this.handleSelectRegion} />
+        </div>
         <div className="section">
           <div className="container">
             <div className="columns is-multiline">
