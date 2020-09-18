@@ -11,8 +11,8 @@ const config = {
 }
 
 const query =  {
-  "filter_not": {
-    "edible_part": "null"
+  'filter_not': {
+    'edible_part': 'null'
   }
 }
 

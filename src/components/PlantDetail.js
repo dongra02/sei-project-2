@@ -17,7 +17,7 @@ class PlantDetail extends React.Component{
     // console.log(plant.data.data.main_species.images[0])
     console.log(plant.data.data.main_species.images.flower.length )
     const flowerArray = []
-    for(let index = 0 ; index < plant.data.data.main_species.images.flower.length; index++) {
+    for (let index = 0 ; index < plant.data.data.main_species.images.flower.length; index++) {
       flowerArray.push(plant.data.data.main_species.images.flower[index].image_url)
     }
     console.log(flowerArray)
@@ -40,7 +40,7 @@ class PlantDetail extends React.Component{
               <div className="container">
                 <p className="title is-1 has-text-centered is-capitalized">{common_name}</p>
                 <p className="subtitle is-3 has-text-centered is-italic is-lowercase">{scientific_name}</p>
-                {main_species.edible_part && <p>Edible Part: {main_species.edible_part}}</p>}
+                {main_species.edible_part && <p>Edible Part: {main_species.edible_part}</p>}
                 <p>Genus Name: {genus.name}</p>
                 <p>Family Name: {family.name}</p>
                 <p>Family Common Name: {family_common_name}</p>
