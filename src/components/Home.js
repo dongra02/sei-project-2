@@ -10,9 +10,6 @@ class Home extends React.Component {
     links: null
   }
 
-  componentDidMount = () => {
-    this.CallEdiblePlant(1)
-  }
   
   CallEdiblePlant = async (pageNum) => {
     const response = await getPlantsEdible(pageNum)
@@ -21,6 +18,10 @@ class Home extends React.Component {
     const links = response.data.links
     console.log(response.data.links)
     this.setState({ plants, links })
+  }
+
+  componentDidMount = () => {
+    this.CallEdiblePlant(1)
   }
 
   ButtonOnClick = (event) => {
