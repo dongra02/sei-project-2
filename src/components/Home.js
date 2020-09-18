@@ -14,6 +14,9 @@ class Home extends React.Component {
   CallEdiblePlant = async (pageNum) => {
     const response = await getPlantsEdible(pageNum)
     const plants = response.data.data
+    plants.sort(function(a,b){
+      return a.common_name.localeCompare(b.common_name)
+    })
     console.log(plants)
     const links = response.data.links
     console.log(response.data.links)
