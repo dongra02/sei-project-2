@@ -14,22 +14,14 @@ class Home extends React.Component {
     links: null
   }
 
-  handleSelectRegion = async(e) => {
-    const region =  e.target.value
-    console.log(region)
-    const response = await getPlantsEdibleQueryTwo()
-    const plants = response.data.data
-    console.log(response.data.data)
-    this.setState({ search: plants })
-  }
-
   filterPlants = async(event) => {
     // console.log(event.target.value)
     const searchQuery = event.target.value
     const response = await getPlantsEdibleQueryTwo(searchQuery)
     const plants = response.data.data
-    console.log(response.data.data)
-    this.setState({ plants, searchQuery })
+    const links = response.data.links
+    console.log(response, response.data, links)
+    this.setState({ plants, searchQuery, links })
   }
 
   
@@ -37,7 +29,17 @@ class Home extends React.Component {
     const response = await getPlantsEdible(pageNum)
     const plants = response.data.data
     console.log(plants)
-    const links = response.data.links
+    let links
+    if ( response.data.data.length > 20){
+      links = response.data.links
+    } else {
+      links = {
+        first: 'page=1',
+        next: 'page=1',
+        self: 'page=1',
+        last: 'page=1'
+      }
+    }
     console.log(response.data.links)
     this.setState({ plants, links })
   }
@@ -67,7 +69,6 @@ class Home extends React.Component {
       <div className="App">
         <div className="contianer search-form">
           <form>
-            {/* <DropDownFilter handleSelectRegion={this.handleSelectRegion} /> */}
             <SearchPlant filterPlants={this.filterPlants} searchQuery={this.searchQuery}/>
           </form>
         </div>

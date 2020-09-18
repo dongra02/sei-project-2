@@ -18,12 +18,6 @@ const query =  {
   }
 }
 
-export const getPlantsDistribution = (region) => {
-  // return axios.get(`${baseUrl}/distributions/${region}/plants?filter[edible]=true`, config)
-  return axios.get(`${baseUrl}/plants?${query}&page=5`, config)
-  // return axios.get(`${baseUrl}/distributions/9/plants?${query}`, config)
-}
-
 export const getPlantsEdible = (pageNum) => {
   console.log(`${baseUrl}/plants?${query}&page=${pageNum}`)
   // return axios.get(`${baseUrl}/plants?${query}&page=${pageNum}`, config)
@@ -34,7 +28,8 @@ export const getPlantsEdible = (pageNum) => {
 export const getPlantsEdibleQueryTwo = (queryText) => {
   console.log(queryText)
   console.log(`${baseUrl}/plants/?&filter[common_name]=${queryText}`)
-  return axios.get(`${baseUrl}/plants/search?q=${queryText}`, config)
+  // return axios.get(`${baseUrl}/plants/search?q=${queryText}`, config)
+  return axios.get(`${baseUrl}/species/search?q=${queryText}&filter[edible]=true`, config)
 }
 
 export const getSinglePlant = slug => axios.get(`${baseUrl}/plants/${slug}`, config)
