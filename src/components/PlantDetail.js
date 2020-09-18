@@ -33,7 +33,7 @@ class PlantDetail extends React.Component{
     return (
       <div className="section">
         <div className="container">
-          <div className="columns is-gapless">
+          <div className="columns">
             <div className="column is-half">
               <div className="container">
                 <p className="title is-1 has-text-centered is-capitalized">{this.state.plant.common_name}</p>
@@ -42,6 +42,7 @@ class PlantDetail extends React.Component{
                 <p>Genus Name: {this.state.plant.genus.name}</p>
                 <p>Family Name: {this.state.plant.family.name}</p>
                 <p>Family Common Name: {this.state.plant.family_common_name}</p>
+                <PlantCarousel flowerArray={this.state.flowerArray}/>
               </div>
             </div>
             <div className="column is-half">
@@ -51,7 +52,6 @@ class PlantDetail extends React.Component{
               {/* <div>{this.state.plant.main_species.images.flower[0].image_url}</div> */}
             </div>
           </div>
-          <PlantCarousel flowerArray={this.state.flowerArray}/>
         </div>
       </div>
     )
