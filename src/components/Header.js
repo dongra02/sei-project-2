@@ -5,10 +5,9 @@ import Navbar from './Navbar'
 const Header = () => {
   return (
     <section className="hero is-primary is-medium with-navbar">
-      <Navbar />
       <div className="hero-body">
-        <div className="container">
-          <h1 className="title">
+        <div className="container has-text-centered">
+          <h1 className="title is-1">
             Plants
           </h1>
           <h2 className="subtitle">
@@ -16,6 +15,7 @@ const Header = () => {
           </h2>
         </div>
       </div>
+      <Navbar />
     </section>
   )
 }

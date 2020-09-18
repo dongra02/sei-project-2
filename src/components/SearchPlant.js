@@ -15,15 +15,9 @@ const SearchPlant = (props) => {
             onChange={props.filterPlants}
           />
         </div>
-        <div className="control">
-          {/* <button className="button is-info is-rounded">
-            Search
-          </button> */}
-        </div>
       </div>
     </div>
   )
-
 }
 
 export default SearchPlant

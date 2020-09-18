@@ -65,7 +65,7 @@ class Home extends React.Component {
 
     return (
       <div className="App">
-        <div>
+        <div className="contianer search-form">
           <form>
             {/* <DropDownFilter handleSelectRegion={this.handleSelectRegion} /> */}
             <SearchPlant filterPlants={this.filterPlants} searchQuery={this.searchQuery}/>
