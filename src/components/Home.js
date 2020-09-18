@@ -10,14 +10,8 @@ class Home extends React.Component {
     links: null
   }
 
-  componentDidMount = async() => {
-    const pageNum = 1
-    const response = await getPlantsEdible(pageNum)
-    const plants = response.data.data
-    console.log(plants)
-    const links = response.data.links
-    console.log(response.data.links)
-    this.setState({ plants, links })
+  componentDidMount = () => {
+    this.CallEdiblePlant(1)
   }
   
   CallEdiblePlant = async (pageNum) => {
@@ -57,7 +51,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <div className="buttons is-success">
+        <div className="buttons is-success is-centered">
           <button className="button" value={this.state.links.first} onClick={this.ButtonOnClick}>First</button>
           <button className="button" value={this.state.links.next} onClick={this.ButtonOnClick}>Next</button>
           <button className="button" value={this.state.links.self} onClick={this.ButtonOnClick}>Previous</button>
