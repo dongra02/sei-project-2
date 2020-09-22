@@ -13,7 +13,6 @@ class PlantDetail extends React.Component{
   componentDidMount = async () => {
     const slug = this.props.match.params.slug
     const plant = await getSinglePlant(slug)
-    console.log(plant.data.data)
     const flowerArray = []
     for (let index = 0 ; index < plant.data.data.main_species.images.flower.length; index++) {
       flowerArray.push(plant.data.data.main_species.images.flower[index].image_url)
@@ -48,7 +47,7 @@ class PlantDetail extends React.Component{
             { image_url ? 
               <div className="column is-half">
                 <figure className="image is-fullwidth">
-                  <img className="is-rounded" src={image_url} alt="plant image" />
+                  <img className="is-rounded" src={image_url} alt="plant" />
                 </figure>
               </div> : <div>Sorry, no image available</div> }
           </div>

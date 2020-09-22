@@ -2,7 +2,6 @@ import React from 'react'
 
 import { getPlantsEdible, getPlantsEdibleQueryTwo } from '../lib/api'
 import PlantCard from './PlantCard'
-import DropDownFilter from './DropDownFilter'
 import SearchPlant from './SearchPlant'
 
 class Home extends React.Component {
@@ -20,7 +19,6 @@ class Home extends React.Component {
     const response = await getPlantsEdibleQueryTwo(searchQuery)
     const plants = response.data.data
     const links = response.data.links
-    console.log(response, response.data, links)
     this.setState({ plants, searchQuery, links })
   }
 
@@ -28,7 +26,6 @@ class Home extends React.Component {
   CallEdiblePlant = async (pageNum) => {
     const response = await getPlantsEdible(pageNum)
     const plants = response.data.data
-    console.log(plants)
     let links
     if ( response.data.data.length === 20){
       links = response.data.links
@@ -40,7 +37,6 @@ class Home extends React.Component {
         last: 'page=1'
       }
     }
-    console.log(response.data.links)
     this.setState({ plants, links })
   }
 
@@ -49,7 +45,6 @@ class Home extends React.Component {
   }
 
   ButtonOnClick = (event) => {
-    console.log(event.target.value)
     let pageNum = event.target.value.split('page=')
     pageNum = pageNum[1]
     if (event.target.value === this.state.links.self) {
@@ -58,7 +53,6 @@ class Home extends React.Component {
         pageNum = '1' 
       }
     }
-    console.log(pageNum)
     this.CallEdiblePlant(pageNum)
   }
 
