@@ -29,7 +29,21 @@ Athough the time spent working on that issue significantly impacted our initial 
   <img src='./images/page.jpg'>
 </div>
 
-The react-responsive-carousel component allowed us to quickly implement an image carousel for a user when viewing its details.
+The Trefle API provides a significant amount of data on each plant, with information nested in several ways. In hopes of creating a carousel feature, we needed to access an array of Trefle client provided photos. The snippet below shows the code we wrote in order to retrieve  the images.
+
+```javascript
+componentDidMount = async () => {
+    const slug = this.props.match.params.slug
+    const plant = await getSinglePlant(slug)
+    const flowerArray = []
+    for (let index = 0 ; index < plant.data.data.main_species.images.flower.length; index++) {
+      flowerArray.push(plant.data.data.main_species.images.flower[index].image_url)
+    }
+    this.setState({ plant: plant.data.data, flowerArray })
+  }
+```
+
+With that set, the react-responsive-carousel component allowed us to quickly implement a functional display for a user when viewing a plant's details.
 
 <div align='center'>
   <img src='./images/show.jpg'>
@@ -37,5 +51,5 @@ The react-responsive-carousel component allowed us to quickly implement an image
 
 ## Challenges, Bugs & Future Considerations
 
-For the time being, this project is likely to remain as is while I focus on additional full stack projects. As mentioned, we used a significant amount of our allotted time working around the CORS issue and then navigating the data we were able to pull to make it manageable and useful to a user. There are formatting related issues I would correct related to both the index, pagination and the plant detail page if I were to return to this project. In addition, we would like to have added additional filtering capabilities as well as more information provided on a given plant.
+For the time being, this project is likely to remain as is while I focus on additional full stack projects. As mentioned, we used a significant amount of our allotted time working around the CORS issue and then navigating the data we were able to pull to make it manageable and useful to a user. There are formatting related issues we would correct related to both the index, pagination and the plant detail page if we were to return to this project. In addition, we would like to have added additional filtering capabilities as well as more information provided on a given plant.
 

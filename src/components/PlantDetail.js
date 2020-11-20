@@ -18,7 +18,6 @@ class PlantDetail extends React.Component{
       flowerArray.push(plant.data.data.main_species.images.flower[index].image_url)
     }
     this.setState({ plant: plant.data.data, flowerArray })
-    
   }
 
   
