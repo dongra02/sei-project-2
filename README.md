@@ -4,7 +4,7 @@
 The application is an edible plant index allowing users to search by common and scientific names along with other attributes.
 
 ## Project Brief
-Collaborate remotely with one teammate to pair code a React application that consumes a public RestAPI. Project must be planned and completed within 36 hours.
+Collaborate remotely with one teammate to pair code a React application that consumes a public REST API. Project must be planned and completed within 36 hours.
 
 ## Technologies Used
 * JavaScript
