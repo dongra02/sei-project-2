@@ -3,19 +3,22 @@
 ## Application Outline
 The application is an edible plant index allowing users to search by common and scientific names along with other attributes.
 
+[Deployed App](https://sei-project-2-dg.netlify.app/)
+
 ## Project Brief
 Collaborate remotely with one teammate to pair code a React application that consumes a public REST API. Project must be planned and completed within 36 hours.
 
 ## Technologies Used
 * JavaScript
 * React
-* react-router-dom
+* React-router-dom
 * Axios
 * Heroku cors-anywhere
 * SCSS
 * Bulma
-* react-responsive-carousel
+* React-responsive-carousel
 * Insomnia
+* Netlify
 
 ## API - Trefle.io
 Trefle is an open API providing botanical information for over 1 million plants.
@@ -53,3 +56,6 @@ With that set, the react-responsive-carousel component allowed us to quickly imp
 
 For the time being, this project is likely to remain as is while I focus on additional full stack projects. As mentioned, we used a significant amount of our allotted time working around the CORS issue and then navigating the data we were able to pull to make it manageable and useful to a user. There are formatting related issues we would correct related to both the index, pagination and the plant detail page if we were to return to this project. In addition, we would like to have added additional filtering capabilities as well as more information provided on a given plant.
 
+## Key Takeaways
+
+My biggest takeaway from this exercise isn't something I can capture in a code snippet. This was a short time-frame assignment, and we hit roadblocks immediately with CORS issues in our requests to Trefle.io. In addition, the documentation in some cases was not up to date, and the data returned was bulky and a bit unwieldy for us at first. I was quite frustrated and anxious about what seemed like a lack of progress as the allotted time passed. My partner was very diligent and patient, and eventually we were able to successfully retrieve and work with the data. One thing she said in our presentation session was how much she enjoyed the obstacle because of the opportunity to learn more in that area while troubleshooting. That was a massive realization for me. I have thought of that comment nearly every time I get stuck now, especially on things beyond the scope of what I have learned. This has really helped me approach bugs and obstacles in more positive way.
